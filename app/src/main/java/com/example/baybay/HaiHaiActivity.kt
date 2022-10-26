@@ -33,7 +33,7 @@ class HaiHaiActivity : ComponentActivity(){
             ) {
 
                 Image(
-                    painter = painterResource(id = R.drawable.blabla),
+                    painter = painterResource(id = R.drawable.love_you_forever),
                     contentDescription ="Gambar")
 
                 Surface(
