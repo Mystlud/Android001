@@ -6,6 +6,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.MaterialTheme
@@ -28,51 +29,8 @@ class HaiHaiActivity : ComponentActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setContent(){
-            Column() {
-                Row() {
-                    Surface(
-                        //modifier = Modifier.aspectRatio(),
-                        color = Color.Red
-                    ){
-                        view()
-                    }
-                    Surface(
-                        //modifier = Modifier.fillMaxWidth(0.3f),
-                        color = Color.Green
-                    ){
-                        view()
-                    }
-                    Surface(
-                        //modifier = Modifier.fillMaxWidth(0.3f),
-                        color = Color.Yellow
-                    ){
-                        view()
-                    }
-                }
-
-                Row() {
-                    Surface(
-                        //modifier = Modifier.fillMaxWidth(),
-                        color = Color.Blue
-                    ){
-                        view()
-                    }
-                    Surface(
-                        //modifier = Modifier.fillMaxWidth(),
-                        color = Color.Magenta
-                    ){
-                        view()
-                    }
-                    Surface(
-                        //modifier = Modifier.fillMaxWidth(),
-                        color = Color.LightGray
-                    ){
-                        view()
-                    }
-
-                }
-            }
+        setContent {
+            view()
         }
     }
 }
@@ -80,10 +38,62 @@ class HaiHaiActivity : ComponentActivity(){
 @Preview
 @Composable
 fun view(){
-    val warnahijau = 0xff07f547
+
+    val orenji = 0xfffa4205
+    val yellowabit = 0xfffac105
+
+    Column(modifier = Modifier.fillMaxSize()) {
+        Row(modifier = Modifier.fillMaxHeight(0.5f)){
+            Surface(modifier = Modifier
+                .weight(1f)
+                .fillMaxHeight(),
+                color = Color.Red) {
+                content()
+            }
+            Surface(modifier = Modifier
+                .weight(1f)
+                .fillMaxHeight(),
+                color = Color.Green) {
+                content()
+            }
+            Surface(modifier = Modifier
+                .weight(1f)
+                .fillMaxHeight(),
+                color = Color.Yellow) {
+                content()
+            }
+        }
+        Row(modifier = Modifier.fillMaxHeight()){
+            Surface(modifier = Modifier
+                .weight(1f)
+                .fillMaxHeight(),
+                color = Color(orenji)) {
+                content()
+            }
+            Surface(modifier = Modifier
+                .weight(1f)
+                .fillMaxHeight(),
+                color = Color.Magenta) {
+                content()
+            }
+            Surface(modifier = Modifier
+                .weight(1f)
+                .fillMaxHeight(),
+                color = Color(yellowabit)) {
+                content()
+            }
+        }
+    }
+}
+
+@Composable
+fun content(){
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
+        verticalArrangement = Arrangement.Center,
+        modifier = Modifier
+            .width(100.dp)
+            .height(100.dp)
     ) {
         Image(
             painter = painterResource(id = R.drawable.love_you_forever),
@@ -91,24 +101,23 @@ fun view(){
             alignment = Alignment.Center,
             modifier = Modifier
                 .clip(CircleShape)
-                .size(30.dp, 30.dp)
+                .size(100.dp, 100.dp)
         )
 
-        /*Spacer(
-            modifier = Modifier.
-        )*/
+        Spacer(
+            modifier = Modifier.height(20.dp)
+        )
+
         Text(
-            text = "HaiHai Kroos desu yo",
-            fontSize = 10.sp,
-            modifier = Modifier.padding(16.dp, 16.dp, 16.dp, 4.dp),
+            text = "Nama",
+            fontSize = 15.sp,
             color = Color.Black,
             textAlign = TextAlign.Center
         )
         Text(
-            text = "Doctor",
+            text = "Jabatan",
             fontSize = 10.sp,
-            modifier = Modifier.padding(16.dp, 16.dp, 16.dp, 4.dp),
-            color = Color(warnahijau),
+            color = Color.Black,
             textAlign = TextAlign.Center
         )
     }
