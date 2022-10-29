@@ -88,6 +88,7 @@ fun view(){
 
 @Composable
 fun content(){
+
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
