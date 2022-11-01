@@ -20,6 +20,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.PathNode
 import androidx.compose.ui.modifier.modifierLocalConsumer
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -98,7 +99,7 @@ fun content(){
     ) {
         Image(
             painter = painterResource(id = R.drawable.love_you_forever),
-            contentDescription = "Gambar",
+            contentDescription = stringResource(R.string.gambar),
             alignment = Alignment.Center,
             modifier = Modifier
                 .clip(CircleShape)
@@ -110,7 +111,7 @@ fun content(){
         )
 
         Text(
-            text = "Nama",
+            text = stringResource(R.string.nama1),
             fontSize = 15.sp,
             color = Color.Black,
             textAlign = TextAlign.Center

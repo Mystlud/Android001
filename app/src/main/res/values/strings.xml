@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">Baybay</string>
+    <string name="gambar">Gambar</string>
+    <string name="nama1">Nama 1</string>
+    <string name="luffy">Luffy</string>
+    <string name="luffy_desc">Luffy</string>
+    <string name="zoro">Zoro</string>
+    <string name="zoro_desc">Zoro</string>
+    <string name="sanji">Sanji</string>
+    <string name="sanji_desc">Sanji</string>
+    <string name="nami">Nami</string>
+    <string name="nami_desc">Nami</string>
+    <string name="chopper">Chopper</string>
+    <string name="chopper_desc">Chopper</string>
+    <string name="usopp">Usopp</string>
+    <string name="usopp_desc">Usopp</string>
 </resources>
